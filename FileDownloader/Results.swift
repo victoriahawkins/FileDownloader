@@ -44,6 +44,14 @@ class Results: UITableViewController {
     }
 
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cellIdentifier = "pageResultsCell"
@@ -55,6 +63,11 @@ class Results: UITableViewController {
         let (page, count) = pageResultsAndCounts[indexPath.row]
 
         cell.textLabel?.text = page
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell.textLabel?.numberOfLines = 0;
+
+        
+
         cell.detailTextLabel?.text = String(count)
 
         return cell
