@@ -71,9 +71,10 @@ class ViewController: UIViewController {
         // sort sequences ascending by their count seen
         sortedSequencesAndCounts = parser.sortSequencesAscending(unsortedSequencesAndCounts)
         
-
-        
-        
+    }
+    
+    
+    @IBAction func displayResults(_ sender: Any) {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

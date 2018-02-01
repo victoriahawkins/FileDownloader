@@ -60,6 +60,7 @@
 		1C1F51AC201F98090077BED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C1F51B8201F9C010077BED5 /* FileDownloadClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadClient.swift; sourceTree = "<group>"; };
 		1C39645F202382D700C0D505 /* sampleApacheFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sampleApacheFile.txt; sourceTree = "<group>"; };
+		1C6FC92720238DB000E731C3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1C7CE2E92021036200F21552 /* SequenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceTests.swift; sourceTree = "<group>"; };
 		1C7CE2EB2022216800F21552 /* FileAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAnalyser.swift; sourceTree = "<group>"; };
 		1CB673A92022881500E34DBB /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 		1C1F517E201F98090077BED5 = {
 			isa = PBXGroup;
 			children = (
+				1C6FC92720238DB000E731C3 /* README.md */,
 				1C1F5189201F98090077BED5 /* FileDownloader */,
 				1C1F519E201F98090077BED5 /* FileDownloaderTests */,
 				1C1F51A9201F98090077BED5 /* FileDownloaderUITests */,

@@ -11,7 +11,7 @@ import Foundation
 
 class FileAnalyser:NSObject {
     
-    
+    let APACHE_FIELD_COUNT = 21 // field count for sample apache log
     
     
     //MARK: - create page sequences
@@ -100,8 +100,46 @@ class FileAnalyser:NSObject {
                     //                    debugPrint("\(lineNumber) --- \(line)")
                     
                     let fields = line.split(separator: " ")
+                    
+                    
+                    // expecting each line to return APACHE_FIELD_COUNT fields
+//                    let count = fields.count
+//                    guard count == APACHE_FIELD_COUNT else {
+//
+//                        debugPrint("Count of fields for line does not conform to expected: \(count) for line \(line)")
+//
+//                        return ipAndPagesVisited
+//                    }
+                    
                     let ipAddress = String(fields[0])
+                    guard validIPAddress (ipAddress) else {
+                        
+                        debugPrint("Invalid IP address in first field: \(ipAddress)")
+
+                        return ipAndPagesVisited
+
+                    }
+                    
                     let relativeURL = String(fields[6])
+                    // at a minimum, match slash and a word
+                    let regex = try NSRegularExpression(pattern: "/(\\w)+")
+//                    "\/(\w)+"
+                    let results = regex.matches(in: relativeURL, range: NSRange(relativeURL.startIndex..., in: relativeURL))
+                    
+                    let matches = results.map {
+                        String(relativeURL[Range($0.range, in: relativeURL)!])
+                    }
+                    
+//                    debugPrint ("matches are \(matches)")
+                    guard !matches.isEmpty else {
+//
+                        debugPrint("Invalid url pattern match: \(relativeURL) ")
+//
+                        return ipAndPagesVisited
+//
+//
+                    }
+
                     
                     //                    debugPrint ("\(ipAddress) \(relativeURL)")
                     
@@ -164,4 +202,18 @@ class FileAnalyser:NSObject {
     }
     
     
+    func validIPAddress (_ ipAddress: String) ->Bool {
+    
+        var sin = sockaddr_in()
+
+        if ipAddress.withCString({ cstring in inet_pton(AF_INET, cstring, &sin.sin_addr) }) == 1 {
+            
+            return true
+        }
+        
+        
+        return false
+        
+
+    }
 }
