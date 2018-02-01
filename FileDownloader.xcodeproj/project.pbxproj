@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C1F518B201F98090077BED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F518A201F98090077BED5 /* AppDelegate.swift */; };
+		1C1F5190201F98090077BED5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1F518E201F98090077BED5 /* Main.storyboard */; };
+		1C1F5192201F98090077BED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C1F5191201F98090077BED5 /* Assets.xcassets */; };
+		1C1F5195201F98090077BED5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1F5193201F98090077BED5 /* LaunchScreen.storyboard */; };
+		1C1F51A0201F98090077BED5 /* FileDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F519F201F98090077BED5 /* FileDownloaderTests.swift */; };
+		1C1F51AB201F98090077BED5 /* FileDownloaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F51AA201F98090077BED5 /* FileDownloaderUITests.swift */; };
+		1C1F51B9201F9C010077BED5 /* FileDownloadClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F51B8201F9C010077BED5 /* FileDownloadClient.swift */; };
+		1C396460202382D700C0D505 /* sampleApacheFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C39645F202382D700C0D505 /* sampleApacheFile.txt */; };
+		1C396461202382D700C0D505 /* sampleApacheFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C39645F202382D700C0D505 /* sampleApacheFile.txt */; };
+		1C7CE2EA2021036200F21552 /* SequenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7CE2E92021036200F21552 /* SequenceTests.swift */; };
+		1C7CE2EC2022216800F21552 /* FileAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7CE2EB2022216800F21552 /* FileAnalyser.swift */; };
+		1C7CE2ED2022260600F21552 /* FileAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7CE2EB2022216800F21552 /* FileAnalyser.swift */; };
+		1C7CE2EE2022371D00F21552 /* FileDownloadClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F51B8201F9C010077BED5 /* FileDownloadClient.swift */; };
+		1C7CE2EF202239DA00F21552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F518A201F98090077BED5 /* AppDelegate.swift */; };
+		1C7CE2F0202239EA00F21552 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F518C201F98090077BED5 /* ViewController.swift */; };
+		1CB673AB20236DC400E34DBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F518C201F98090077BED5 /* ViewController.swift */; };
+		1CB673AC20236DD700E34DBB /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB673A92022881500E34DBB /* Results.swift */; };
+		1CB673AD20236DDA00E34DBB /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB673A92022881500E34DBB /* Results.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1C1F519C201F98090077BED5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C1F517F201F98090077BED5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C1F5186201F98090077BED5;
+			remoteInfo = FileDownloader;
+		};
+		1C1F51A7201F98090077BED5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C1F517F201F98090077BED5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C1F5186201F98090077BED5;
+			remoteInfo = FileDownloader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1C1F5187201F98090077BED5 /* FileDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C1F518A201F98090077BED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1C1F518C201F98090077BED5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1C1F518F201F98090077BED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1C1F5191201F98090077BED5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C1F5194201F98090077BED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1C1F5196201F98090077BED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C1F519B201F98090077BED5 /* FileDownloaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileDownloaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C1F519F201F98090077BED5 /* FileDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloaderTests.swift; sourceTree = "<group>"; };
+		1C1F51A1201F98090077BED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C1F51A6201F98090077BED5 /* FileDownloaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileDownloaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C1F51AA201F98090077BED5 /* FileDownloaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloaderUITests.swift; sourceTree = "<group>"; };
+		1C1F51AC201F98090077BED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C1F51B8201F9C010077BED5 /* FileDownloadClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadClient.swift; sourceTree = "<group>"; };
+		1C39645F202382D700C0D505 /* sampleApacheFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sampleApacheFile.txt; sourceTree = "<group>"; };
+		1C7CE2E92021036200F21552 /* SequenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceTests.swift; sourceTree = "<group>"; };
+		1C7CE2EB2022216800F21552 /* FileAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAnalyser.swift; sourceTree = "<group>"; };
+		1CB673A92022881500E34DBB /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C1F5184201F98090077BED5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C1F5198201F98090077BED5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C1F51A3201F98090077BED5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C1F517E201F98090077BED5 = {
+			isa = PBXGroup;
+			children = (
+				1C1F5189201F98090077BED5 /* FileDownloader */,
+				1C1F519E201F98090077BED5 /* FileDownloaderTests */,
+				1C1F51A9201F98090077BED5 /* FileDownloaderUITests */,
+				1C1F5188201F98090077BED5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1C1F5188201F98090077BED5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C1F5187201F98090077BED5 /* FileDownloader.app */,
+				1C1F519B201F98090077BED5 /* FileDownloaderTests.xctest */,
+				1C1F51A6201F98090077BED5 /* FileDownloaderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1C1F5189201F98090077BED5 /* FileDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				1C39645E202382AB00C0D505 /* resource */,
+				1C1F518A201F98090077BED5 /* AppDelegate.swift */,
+				1C1F518C201F98090077BED5 /* ViewController.swift */,
+				1CB673A92022881500E34DBB /* Results.swift */,
+				1C1F518E201F98090077BED5 /* Main.storyboard */,
+				1C1F5191201F98090077BED5 /* Assets.xcassets */,
+				1C1F5193201F98090077BED5 /* LaunchScreen.storyboard */,
+				1C1F5196201F98090077BED5 /* Info.plist */,
+				1C1F51B8201F9C010077BED5 /* FileDownloadClient.swift */,
+				1C7CE2EB2022216800F21552 /* FileAnalyser.swift */,
+			);
+			path = FileDownloader;
+			sourceTree = "<group>";
+		};
+		1C1F519E201F98090077BED5 /* FileDownloaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				1C1F519F201F98090077BED5 /* FileDownloaderTests.swift */,
+				1C1F51A1201F98090077BED5 /* Info.plist */,
+				1C7CE2E92021036200F21552 /* SequenceTests.swift */,
+			);
+			path = FileDownloaderTests;
+			sourceTree = "<group>";
+		};
+		1C1F51A9201F98090077BED5 /* FileDownloaderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1C1F51AA201F98090077BED5 /* FileDownloaderUITests.swift */,
+				1C1F51AC201F98090077BED5 /* Info.plist */,
+			);
+			path = FileDownloaderUITests;
+			sourceTree = "<group>";
+		};
+		1C39645E202382AB00C0D505 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				1C39645F202382D700C0D505 /* sampleApacheFile.txt */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1C1F5186201F98090077BED5 /* FileDownloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C1F51AF201F98090077BED5 /* Build configuration list for PBXNativeTarget "FileDownloader" */;
+			buildPhases = (
+				1C1F5183201F98090077BED5 /* Sources */,
+				1C1F5184201F98090077BED5 /* Frameworks */,
+				1C1F5185201F98090077BED5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FileDownloader;
+			productName = FileDownloader;
+			productReference = 1C1F5187201F98090077BED5 /* FileDownloader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1C1F519A201F98090077BED5 /* FileDownloaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C1F51B2201F98090077BED5 /* Build configuration list for PBXNativeTarget "FileDownloaderTests" */;
+			buildPhases = (
+				1C1F5197201F98090077BED5 /* Sources */,
+				1C1F5198201F98090077BED5 /* Frameworks */,
+				1C1F5199201F98090077BED5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C1F519D201F98090077BED5 /* PBXTargetDependency */,
+			);
+			name = FileDownloaderTests;
+			productName = FileDownloaderTests;
+			productReference = 1C1F519B201F98090077BED5 /* FileDownloaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1C1F51A5201F98090077BED5 /* FileDownloaderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C1F51B5201F98090077BED5 /* Build configuration list for PBXNativeTarget "FileDownloaderUITests" */;
+			buildPhases = (
+				1C1F51A2201F98090077BED5 /* Sources */,
+				1C1F51A3201F98090077BED5 /* Frameworks */,
+				1C1F51A4201F98090077BED5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C1F51A8201F98090077BED5 /* PBXTargetDependency */,
+			);
+			name = FileDownloaderUITests;
+			productName = FileDownloaderUITests;
+			productReference = 1C1F51A6201F98090077BED5 /* FileDownloaderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1C1F517F201F98090077BED5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Victoria Hawkins";
+				TargetAttributes = {
+					1C1F5186201F98090077BED5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					1C1F519A201F98090077BED5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1C1F5186201F98090077BED5;
+					};
+					1C1F51A5201F98090077BED5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1C1F5186201F98090077BED5;
+					};
+				};
+			};
+			buildConfigurationList = 1C1F5182201F98090077BED5 /* Build configuration list for PBXProject "FileDownloader" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1C1F517E201F98090077BED5;
+			productRefGroup = 1C1F5188201F98090077BED5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1C1F5186201F98090077BED5 /* FileDownloader */,
+				1C1F519A201F98090077BED5 /* FileDownloaderTests */,
+				1C1F51A5201F98090077BED5 /* FileDownloaderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1C1F5185201F98090077BED5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C1F5195201F98090077BED5 /* LaunchScreen.storyboard in Resources */,
+				1C1F5192201F98090077BED5 /* Assets.xcassets in Resources */,
+				1C396460202382D700C0D505 /* sampleApacheFile.txt in Resources */,
+				1C1F5190201F98090077BED5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C1F5199201F98090077BED5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C396461202382D700C0D505 /* sampleApacheFile.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C1F51A4201F98090077BED5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C1F5183201F98090077BED5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CB673AB20236DC400E34DBB /* ViewController.swift in Sources */,
+				1C7CE2EC2022216800F21552 /* FileAnalyser.swift in Sources */,
+				1C1F51B9201F9C010077BED5 /* FileDownloadClient.swift in Sources */,
+				1C1F518B201F98090077BED5 /* AppDelegate.swift in Sources */,
+				1CB673AD20236DDA00E34DBB /* Results.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C1F5197201F98090077BED5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C7CE2F0202239EA00F21552 /* ViewController.swift in Sources */,
+				1C7CE2EA2021036200F21552 /* SequenceTests.swift in Sources */,
+				1C7CE2ED2022260600F21552 /* FileAnalyser.swift in Sources */,
+				1CB673AC20236DD700E34DBB /* Results.swift in Sources */,
+				1C7CE2EE2022371D00F21552 /* FileDownloadClient.swift in Sources */,
+				1C7CE2EF202239DA00F21552 /* AppDelegate.swift in Sources */,
+				1C1F51A0201F98090077BED5 /* FileDownloaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C1F51A2201F98090077BED5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C1F51AB201F98090077BED5 /* FileDownloaderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1C1F519D201F98090077BED5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C1F5186201F98090077BED5 /* FileDownloader */;
+			targetProxy = 1C1F519C201F98090077BED5 /* PBXContainerItemProxy */;
+		};
+		1C1F51A8201F98090077BED5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C1F5186201F98090077BED5 /* FileDownloader */;
+			targetProxy = 1C1F51A7201F98090077BED5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1C1F518E201F98090077BED5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C1F518F201F98090077BED5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1C1F5193201F98090077BED5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C1F5194201F98090077BED5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1C1F51AD201F98090077BED5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1C1F51AE201F98090077BED5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1C1F51B0201F98090077BED5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JV99LRXQN5;
+				INFOPLIST_FILE = FileDownloader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.boxtree.vic.FileDownloader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1C1F51B1201F98090077BED5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JV99LRXQN5;
+				INFOPLIST_FILE = FileDownloader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.boxtree.vic.FileDownloader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1C1F51B3201F98090077BED5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JV99LRXQN5;
+				INFOPLIST_FILE = FileDownloaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.boxtree.vic.FileDownloaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FileDownloader.app/FileDownloader";
+			};
+			name = Debug;
+		};
+		1C1F51B4201F98090077BED5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JV99LRXQN5;
+				INFOPLIST_FILE = FileDownloaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.boxtree.vic.FileDownloaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FileDownloader.app/FileDownloader";
+			};
+			name = Release;
+		};
+		1C1F51B6201F98090077BED5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JV99LRXQN5;
+				INFOPLIST_FILE = FileDownloaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.boxtree.vic.FileDownloaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FileDownloader;
+			};
+			name = Debug;
+		};
+		1C1F51B7201F98090077BED5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JV99LRXQN5;
+				INFOPLIST_FILE = FileDownloaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.boxtree.vic.FileDownloaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FileDownloader;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C1F5182201F98090077BED5 /* Build configuration list for PBXProject "FileDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C1F51AD201F98090077BED5 /* Debug */,
+				1C1F51AE201F98090077BED5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C1F51AF201F98090077BED5 /* Build configuration list for PBXNativeTarget "FileDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C1F51B0201F98090077BED5 /* Debug */,
+				1C1F51B1201F98090077BED5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C1F51B2201F98090077BED5 /* Build configuration list for PBXNativeTarget "FileDownloaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C1F51B3201F98090077BED5 /* Debug */,
+				1C1F51B4201F98090077BED5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C1F51B5201F98090077BED5 /* Build configuration list for PBXNativeTarget "FileDownloaderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C1F51B6201F98090077BED5 /* Debug */,
+				1C1F51B7201F98090077BED5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1C1F517F201F98090077BED5 /* Project object */;
+}
