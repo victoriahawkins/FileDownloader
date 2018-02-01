@@ -7,16 +7,16 @@ For example, in the following symbolic log lines referring to an IP address and 
 
 IP 1: Page 1
 
-IP 2: Page 1
-IP 2: Page 2
-IP 2: Page 3
-IP 2: Page 2
+IP 2: Page 1  
+IP 2: Page 2  
+IP 2: Page 3  
+IP 2: Page 2  
 
-IP 1: Page 2
-IP 1: Page 3
-IP 1: Page 4
-IP 1: Page 1
-IP 1: Page 2
+IP 1: Page 2  
+IP 1: Page 3  
+IP 1: Page 4  
+IP 1: Page 1  
+IP 1: Page 2  
 
 The most common three page sequence is 1-2-3 for each IP1 and IP2
 
