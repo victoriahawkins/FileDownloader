@@ -8,6 +8,15 @@
 
 import UIKit
 
+
+/* Turn off expensive printing for app's Release scheme by unsetting DEBUG flag. */
+public func debugPrint(_ items: Any..., separator: String =  " ", terminator: String = "\n")
+{
+    #if DEBUG
+        Swift.debugPrint(items, separator: separator, terminator: terminator)
+    #endif
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

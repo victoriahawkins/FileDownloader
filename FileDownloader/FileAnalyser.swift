@@ -57,17 +57,22 @@ class FileAnalyser:NSObject {
     
     //MARK: - sort sequences and counts
     /* Sort sequences an counts in ascending order, largest count at the top */
+    fileprivate func displaySortedMessagesForDebug(_ sortedSeqeuncesAndCounts: [(key: String, value: Int)]) {
+        debugPrint("Sorted page sequences for Users are:")
+        for (sequence, appearances) in sortedSeqeuncesAndCounts  {
+            
+            debugPrint(" \(sequence) : \(appearances)")
+        }
+    }
+    
     func sortSequencesAscending(_ seqeuncesCounts: [String:Int])->[(String, Int)] {
         
         // return array sorted ascending order
         let sortedSeqeuncesAndCounts =  Array(seqeuncesCounts).sorted(by: {$0.1 > $1.1})
         
         
-        debugPrint("Sorted page sequences for Users are:")
-        for (sequence, appearances) in sortedSeqeuncesAndCounts  {
-            
-            debugPrint(" \(sequence) : \(appearances)")
-        }
+        // prevent from being called in release build
+        debugPrint(displaySortedMessagesForDebug(sortedSeqeuncesAndCounts))
         
         return sortedSeqeuncesAndCounts
     }
@@ -122,22 +127,29 @@ class FileAnalyser:NSObject {
                     
                     let relativeURL = String(fields[6])
                     // at a minimum, match slash and a word
-                    let regex = try NSRegularExpression(pattern: "/(\\w)+")
-//                    "\/(\w)+"
-                    let results = regex.matches(in: relativeURL, range: NSRange(relativeURL.startIndex..., in: relativeURL))
                     
-                    let matches = results.map {
-                        String(relativeURL[Range($0.range, in: relativeURL)!])
+                    let regex = try NSRegularExpression(pattern: "/(\\w)+")
+                    
+                    var matches =  [String]()
+                    autoreleasepool { // solves the leak in NSRegularExpression
+
+                        let results = regex.matches(in: relativeURL, range: NSRange(relativeURL.startIndex..., in: relativeURL))
+                        
+                        
+                        
+                        matches = results.map {
+                            String(relativeURL[Range($0.range, in: relativeURL)!])
+                        }
+                        
+                        //                    debugPrint ("matches are \(matches)")
+         
                     }
                     
-//                    debugPrint ("matches are \(matches)")
                     guard !matches.isEmpty else {
-//
+                        
                         debugPrint("Invalid url pattern match: \(relativeURL) ")
-//
+                        
                         return ipAndPagesVisited
-//
-//
                     }
 
                     

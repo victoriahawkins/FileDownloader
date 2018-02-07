@@ -59,17 +59,26 @@ class ViewController: UIViewController {
             return
         }
         
+        
+        
         // returns dictionary of IP->array of pages visited
         let visitedPages = parser.extractPageVisitsPerUser(file)
         
+        updateParsingProgress(message: "Parsing started")
+
+        
         // creates combined list of three page sequences found by traversing page visits lists
+
         let combinedSequences = parser.createPageSequencesPerUserVisits(visitedPages: visitedPages)
         
         // group similar page sequences and produce a count
+
         let unsortedSequencesAndCounts = parser.groupRelatedSequences(combinedSequences)
         
         // sort sequences ascending by their count seen
         sortedSequencesAndCounts = parser.sortSequencesAscending(unsortedSequencesAndCounts)
+        
+        updateParsingProgress(message:  "Parsing complete")
         
     }
     
@@ -87,7 +96,20 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    func updateParsingProgress(message: String) {
+
+
+            DispatchQueue.main.async{ () -> Void  in
+                self.downloadProgressText.text = message
+            }
+
+    
+    }
+    
 }
+
+
 
 //MARK: ProgressDelegate -- functions for updating progress view, file name
 extension ViewController: DownloadProgressDelegate {
@@ -116,6 +138,8 @@ extension ViewController: DownloadProgressDelegate {
         self.downloadProgress.progress = 0;
         self.downloadProgressText.text =  String(format: "%.1f%%", 0)
     }
+    
+
 
 }
 

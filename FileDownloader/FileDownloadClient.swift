@@ -30,7 +30,7 @@ final class FileDownloadClient : NSObject {
         // for potential asynchronous download operations (default nil creates a serial queue)
         weak var queue = OperationQueue()
 
-        // this will create a new URLSession ore return the previously created one
+        // this will create a new URLSession or return the previously created one
         return URLSession(configuration: config, delegate: self, delegateQueue: queue)
     }()
     
