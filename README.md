@@ -49,7 +49,8 @@ private lazy var urlSession: URLSession = {
 ```
 The view controlller starts the session and the download and sets itself as a delegate for asynchronous events
 ```swift
-    let task = client.startSession().downloadTask(with: url)
+    let client = FileDownloadClient()// starts default session
+    let task = client.downloadFileInBackground (with: url)
     task.resume()
     client.delegate = self;
 ```
@@ -94,4 +95,4 @@ This class is the UITableViewController that displays the sorted page sequence r
 The majority of unit testing was to exercise the parsing code in SequenceTests.swift. Fake data as well as a sample slice of the apache test file were used. The tests to load a sample file, parse the file into arrays of pages visited, grouping and sorting are completely covered by this unit test class.
 
 ### FileDownloaderTests
-The intention of these tests is to exercise FileDownloadClient networking code. The test will download a sample large file and exercise most of the client class. This set of tests needs to be enhanced to allow mocking and testing various failure conditions such as file not found, network not available, etc.
+The intention of these tests is to exercise FileDownloadClient networking code. The test will download a sample large file and exercise most of the client class. Tests were also added to simulate a URLSession and URLSessionDownloadTask using protocols, extensions and mock classes. The mocking code was added to FileDownloadClient.
