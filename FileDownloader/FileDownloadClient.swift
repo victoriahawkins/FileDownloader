@@ -12,12 +12,13 @@ import UIKit
 //MARK: - FileDownloadClient -- Download a single file in background
 /* this class provides a client to download a single file in the background, and a delegate for providing a value to update a progress view in the view controller
  */
-final class FileDownloadClient : NSObject {
+class FileDownloadClient : NSObject {
     
-    //MARK: - Main session
+    //MARK: - Main session, could be mock or real
+    private var downloadSession: URLSessionDownloadProtocol?
     
-    // create a background URL session
-    private lazy var urlSession: URLSession = {
+    // create a real background URL session
+    private lazy var defaultDownloadSession: URLSession = {
         
         let config = URLSessionConfiguration.background(withIdentifier: "MyBigFileSession")
         
@@ -39,14 +40,34 @@ final class FileDownloadClient : NSObject {
     weak var delegate: DownloadProgressDelegate?
 
     
-    //MARK: startSession - return lazy session
-    func startSession() -> URLSession {
-        return urlSession;
+    //MARK: startSession - return lazy real session
+//    private static func startRealSession() -> URLSession {
+//
+//        return defaultDownloadSession
+//    }
+    
+    
+    // return a default session
+    override init() {
+        super.init()
+        downloadSession = self.defaultDownloadSession
     }
     
+    // init method returns real session by default, mocked can be supplied
+    init(session: URLSessionDownloadProtocol) {
+        self.downloadSession = session
+    }
+    
+    //MARK: download file --  perform background download, encapsulate downloadsession download task
+    func downloadFileInBackground(with url: URL) -> URLSessionDownloadTaskProtocol {
+        return downloadSession!.downloadTask(with: url)
+    }
+
 }
 
-//MARK: - URLSessionDelegate -- updates for session level events
+//MARK: - Delegates
+
+//MARK: URLSessionDelegate -- updates for session level events
 extension FileDownloadClient: URLSessionDelegate {
 
     // When all events have been delivered, system calls this method. Fetch the completion handler stored by the app delegate and execute it.
@@ -68,7 +89,7 @@ extension FileDownloadClient: URLSessionDelegate {
 
 }
 
-//MARK: - URLSessionDownloadDelegate -- updates for the transfer status
+//MARK: URLSessionDownloadDelegate -- updates for the transfer status
 extension FileDownloadClient: URLSessionDownloadDelegate {
     
 
@@ -118,7 +139,7 @@ extension FileDownloadClient: URLSessionDownloadDelegate {
     }
 }
 
-//MARK: - DownloadProgressDelegate - Update download progress
+//MARK: DownloadProgressDelegate - Update download progress
 protocol DownloadProgressDelegate: class {
     
     // return percentage for indicating progress made on download
@@ -128,6 +149,52 @@ protocol DownloadProgressDelegate: class {
     func notifyFileURL(file: URL)
 }
 
-//MARK:
+//MARK: - Mocking
+//MARK: URLSessionDownloadProtocol -- extension for Real or Mocked session for background download
+protocol URLSessionDownloadProtocol {
+    func downloadTask(with url: URL) -> URLSessionDownloadTaskProtocol
 
+
+}
+
+// URLSession conforms ot URLSessionDownloadProtocol
+extension URLSession: URLSessionDownloadProtocol {
+    func downloadTask(with url: URL) -> URLSessionDownloadTaskProtocol {
+        return (downloadTask(with: url) as URLSessionDownloadTask) as URLSessionDownloadTaskProtocol
+    }
+}
+
+
+//MARK: MockDownloadSession -- mock implementation for URL passed to download task
+class MockDownloadSession: URLSessionDownloadProtocol {
+    
+    // for testing the last url used
+    private (set) var lastURL: URL?
+    
+    // for testing download task
+    var nextDownloadTask = MockURLSessionDownloadTask()
+
+    func downloadTask(with url: URL) -> URLSessionDownloadTaskProtocol {
+        lastURL = url
+        return nextDownloadTask
+    }
+}
+
+//MARK: URLSessionDownloadTaskProtocol -- extension for Real or Mocked download task
+protocol URLSessionDownloadTaskProtocol {
+    func resume()
+}
+
+// URLSessionDownloadTask conforms to the URLSessionDownloadTaskProtocol
+extension URLSessionDownloadTask: URLSessionDownloadTaskProtocol { }
+
+
+//MARK: MockURLSessionDownloadTask -- Mock implementation for resume of task
+class MockURLSessionDownloadTask: URLSessionDownloadTaskProtocol {
+    private (set) var resumeWasCalled = false
+    
+    func resume() {
+        resumeWasCalled = true
+    }
+}
 

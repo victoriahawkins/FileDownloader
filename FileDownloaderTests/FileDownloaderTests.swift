@@ -12,37 +12,52 @@ import XCTest
 
 class FileDownloaderTests: XCTestCase {
     
+    let url = URL(string: "https://scholar.princeton.edu/sites/default/files/oversize_pdf_test_0.pdf")!
+    
     var client:FileDownloadClient!
     
-//    let session = MockURLSession()
+    let session = MockDownloadSession()
 
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        client = FileDownloadClient()
 
-
+        client = FileDownloadClient(session: session)
+    
     }
     
     override func tearDown() {
-        
-        
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
         super.tearDown()
     }
+
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    /* Test the URL for the download matches the URL that was passed */
+    func testMockedLastURL() {
+        
+        _ = client.downloadFileInBackground(with: url)
+
+        XCTAssertEqual(session.lastURL, url)
+        
     }
     
-    func testDownloadFileInBackground() {
+    func testMockedDownloadStartsTheRequest() {
         
-        let url = URL(string: "https://scholar.princeton.edu/sites/default/files/oversize_pdf_test_0.pdf")!
-        let task = client.startSession().downloadTask(with: url)
+        let downloadTask = MockURLSessionDownloadTask()
+        session.nextDownloadTask = downloadTask
+
+        let task = client.downloadFileInBackground(with: url)
         task.resume()
+        
+        XCTAssert(downloadTask.resumeWasCalled)
+
+    }
+    
+    func testRealSessionDownloadFileInBackground() {
+        
+        let client = FileDownloadClient()// starts default session
+        let task = client.downloadFileInBackground (with: url)
+        task.resume()  /// TODO encapsulate
     }
     
     func testPerformanceExample() {

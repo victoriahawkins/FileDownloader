@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var downloadProgress: UIProgressView!
     
     @IBOutlet weak var downloadProgressText: UITextField!
-    let client = FileDownloadClient()
+    
+    var client: FileDownloadClient?
     
     let parser = FileAnalyser()
     
@@ -41,14 +42,20 @@ class ViewController: UIViewController {
     //MARK: Actions
     @IBAction func startDownload(_ sender: Any) {
         
+        // reset progress bar and message
         resetProgress();
         
-        //        let url = URL(string: "https://scholar.princeton.edu/sites/default/files/oversize_pdf_test_0.pdf")!
+        // remove existing downloaded files in documents folder since we only want to keep
+        // most recent downloaded
+        removeExistingFiles();
+        
         let url = URL(
             string: "https://dev.inspiringapps.com/Files/IAChallenge/30E02AAA-B947-4D4B-8FB6-9C57C43872A9/Apache.log")!
         
-        let task = client.startSession().downloadTask(with: url)
-        task.resume()
+        
+        let client = FileDownloadClient()// starts default session
+        let task = client.downloadFileInBackground (with: url)
+        task.resume()  /// TODO encapsulate
         client.delegate = self;
     }
     
@@ -107,6 +114,21 @@ class ViewController: UIViewController {
     
     }
     
+    /* remove existing files in Documents folder */
+    func removeExistingFiles() {
+        let fileManager = FileManager.default
+        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        do {
+            let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
+            
+            for file in fileURLs {
+                debugPrint("Removing file found at \(file)")
+                try FileManager.default.removeItem(at: file)
+            }
+        } catch {
+            debugPrint("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
+        }
+    }
 }
 
 
@@ -138,8 +160,4 @@ extension ViewController: DownloadProgressDelegate {
         self.downloadProgress.progress = 0;
         self.downloadProgressText.text =  String(format: "%.1f%%", 0)
     }
-    
-
-
 }
-
